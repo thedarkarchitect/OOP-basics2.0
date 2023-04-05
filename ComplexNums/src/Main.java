@@ -10,7 +10,7 @@ public class Main {
         one.subtract(number);
         System.out.println("one.real= " + one.getReal());
         System.out.println("one.imaginary= " + one.getImaginary());
-        
+
         number.subtract(one);
         System.out.println("number.real= " + number.getReal());
         System.out.println("number.imaginary= " + number.getImaginary());
