@@ -20,7 +20,7 @@ public class Printer {
     }
 
     public int printPages(int pages){
-        int jobPages = (duplex) ? (pages / 2) + (pages % 2) : pages;
+        int jobPages = (duplex) ? (pages / 2) + (pages % 2) : pages;//ternary operator;
 
         pagesPrinted += jobPages;
         return jobPages;
