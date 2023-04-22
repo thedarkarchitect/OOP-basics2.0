@@ -34,7 +34,7 @@ public class Item {
         this.size = size;
     }
 
-    public static void printItem(String name, double price){
+    public static void printItem(String name, double price){//this method is reusable in other classes that extend this very class
         System.out.printf("%20s:%6.2f%n", name, price);
     }
 
