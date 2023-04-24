@@ -1,10 +1,21 @@
 import java.util.LinkedList;
 
 public class Main {
-    record PLace (String town, int distance ){}
+    record Place (String town, int distance ){
+        //make the record display a certain way
+
+        @Override
+        public String toString() {
+            return String.format("%s (%d)", town, distance);
+        }
+    }
 
     public static void main(String[] args) {
-        LinkedList<PLace> location = new LinkedList<>();
+        LinkedList<Place> locations = new LinkedList<>();
+        Place adelaide = new Place("Adelaide", 1374);
+        addPlace(locations, adelaide);
+        System.out.println(locations);
+
 //        location.add(new PLace("Adelaide", 1374));
 //        location.add(new PLace("Alice Springs", 2771));
 //        location.add(new PLace("Brisbane", 917));
@@ -19,8 +30,8 @@ public class Main {
 
     }
 
-    private static void addPlace(LinkedList<PLace> list, Place place){
-        
+    private static void addPlace(LinkedList<Place> list, Place place){
+
     }
 
 
