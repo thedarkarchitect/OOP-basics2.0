@@ -31,7 +31,11 @@ public class Main {
     }
 
     private static void addPlace(LinkedList<Place> list, Place place){
-
+        if(list.contains(place)){
+            System.out.println("Found duplicate: "+ place);
+            return;
+        }
+        list.add(place);
     }
 
 
