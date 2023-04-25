@@ -44,8 +44,11 @@ public class Main {
             switch(selector){
                 case "F":
                     System.out.println("User want to go forward");
-                    if(!forward){
+                    if(!forward){ //REversing the direction og the cusor
                         forward = true;
+                        if(iterator.hasNext()){
+                            iterator.next();//Adjust position to move forward
+                        }
                     }
                     if(iterator.hasNext()){
                         System.out.println(iterator.next());
@@ -55,6 +58,13 @@ public class Main {
                     break;
                 case "B":
                     System.out.println("User wants to go backwards");
+                    if(forward){ //reverse direction
+                        forward = false;
+                        if(iterator.hasPrevious()){
+                            iterator.previous();//adjust position to move backwards
+                        }
+                    }
+
                     if(iterator.hasPrevious()){
                         System.out.println(iterator.previous());
                     }
