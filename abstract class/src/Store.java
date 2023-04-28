@@ -1,9 +1,7 @@
 import java.util.ArrayList;
+
+record OrderItem(int qty, ProductForSale product){};
 public class Store{
-
-    record OrderItem(int qty, ProductForSale product){};
-
-
     private static ArrayList<ProductForSale> productList = new ArrayList<>();
     public static void main(String[] args) {
         productList.add(new Food("grapes", 24, "A healthy breakfast addition"));
@@ -26,20 +24,16 @@ public class Store{
     }
 
     public static void addItemToOrder(ArrayList<OrderItem> order, int orderIndex, int qty){
-        productList.add(new OrderItem(qty, productList.get(orderIndex)));
+        var products = productList.get(orderIndex);
+        productList.add(new OrderItem(qty, products));
     }
 
     public static void printOrder(ArrayList<OrderItem> order){//a list of the records
         double salesTotal = 0;//this will keep track of sales by the order
         for(var item : order){
-            System.out.println("item ->"+item);
             item.product().printPricedItem(item.qty());
             salesTotal += item.product().getSalesPrice(item.qty());
         }
-
         System.out.printf("Sales Total = $%6.2f %n", salesTotal);
     }
-
-
-
 }
