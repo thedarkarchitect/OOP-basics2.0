@@ -6,7 +6,7 @@ public class Sweets extends ProductForSale{
     @Override
     void showDetails() {
         System.out.println("This "+type+" is a real treat.");
-        System.out.printf("The price of the piece is $%6.2f %n", price);
+        System.out.printf("The price a piece is $%6.2f %n", price);
         System.out.println(description);
     }
 }
