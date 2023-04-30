@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class Layer <T extends Mappable>{
     private List<T> layerElements;
 
-    public Layer(List<T> layerElements) {
-        this.layerElements =new ArrayList<T>(List.of(layerElements));
+    public Layer(Park[] layerElements) {
+        this.layerElements =new ArrayList<T>((Collection<? extends T>) List.of(layerElements));
     }
 
     public void addElements(T... elements){
